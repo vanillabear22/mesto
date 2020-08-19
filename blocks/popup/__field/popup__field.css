@@ -1,0 +1,17 @@
+@import url(./_name/popup__field_name.css);
+@import url(./_status/popup__field_status.css);
+.popup__field {
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 28px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+}
+.popup__field::placeholder {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: black;
+}

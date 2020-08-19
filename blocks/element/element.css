@@ -1,0 +1,12 @@
+@import url(../element/__bottom/element__bottom.css);
+@import url(../element/__image/element__image.css);
+@import url(../element/__like/element__like.css);
+@import url(../element/__place-name/element__place-name.css);
+.element {
+    max-width: 100%;
+    height: 361px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    
+}

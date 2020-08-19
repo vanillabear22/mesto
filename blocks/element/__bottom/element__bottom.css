@@ -1,0 +1,9 @@
+.element__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 79px;
+    width: 246px;
+    margin:  0 auto;
+
+}

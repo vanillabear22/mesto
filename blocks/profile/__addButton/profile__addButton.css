@@ -1,0 +1,19 @@
+.profile__addButton {
+    width: 150px;
+    height: 50px;
+    align-self: center;
+    background-color: black;
+    border: 2px solid white;
+    margin-left: auto;
+}
+.profile__addButton:hover {
+    opacity: 0.8;
+}
+@media screen and (max-width: 650px) {
+    .profile__addButton {
+    margin: 36px 19px;
+    width: 282px;
+    height: 50px;
+    margin-bottom: 0;
+    }
+}
