@@ -1,7 +1,7 @@
 @import url(./__container.css/popup__container.css);
 @import url(./__close-icon/popup__close-icon.css);
 @import url(./__field/popup__field.css);
-@import url(./__submitButton/popup__submitButton.css);
+@import url(./__submit-button/popup__submit-button.css);
 @import url(./__title/popup__title.css);
 @import url(./_hidden/popup_hidden.css);
 @import url(./__form/popup__form.css);
@@ -12,4 +12,5 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 0;
 }

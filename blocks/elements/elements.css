@@ -7,7 +7,7 @@
 }
 @media screen and (max-width: 890px) {
     .elements {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* я не понял какой отступ поправить */
     }
     
 }

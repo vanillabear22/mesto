@@ -2,7 +2,11 @@
     position: fixed;
     top: -14%;
     right: -12%;
+    background: none;
+    border: none;
+
 }
 .popup__close-icon:hover {
     opacity: 0.8;
+    cursor: pointer;
 }

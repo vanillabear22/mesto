@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./pages/index.css">
@@ -12,78 +12,78 @@
     <div class="popup_hidden popup">
         <div class="popup__container">
             <h3 class="popup__title" >Редактировать профиль</h3>
-            <form class="popup__form">
-            <input  class="popup__field popup__field_name">
-            <input  class="popup__field popup__field_status">
-            <button type="submit" class="popup__submitButton">Сохранить</button>
+            <form name="form" method="POST" class="popup__form">
+            <input name="input-name" type="text" class="popup__field popup__field_name">
+            <input name="input-status" type="text" class="popup__field popup__field_status">
+            <button type="submit" class="popup__submit-button">Сохранить</button>
             </form>
-            <img class="popup__close-icon" src="./images/Close Icon.png" alt="close-icon">
+            <button type="button" class="popup__close-icon"><img src="./images/Close-Icon.svg" </button>
         </div>
     </div>
     <div class="page">
         
         <header class="header">
-            <img class="header__logo" src="./images/mesto.png" alt="logo">
+            <img class="header__logo" src="./images/logo.svg" alt="лого">
         </header>
         <main>
         <section class="profile">
-            <img class="profile__avatar" src="./images/avatar.jpg" alt="avatar">
+            <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар">
             <div class="profile__info">
                 <div class="profile__up-string">
                     <p class="profile__name">Жак-Ив Кусто</p>
-                    <button class="profile__editButton"><img src="./images/карандаш.png" alt="pencil"></button>
+                    <button type="button" class="profile__edit-button"><img src="./images/карандаш.svg" alt="карандаш"></button>
                 </div>
                 <p class="profile__status">Исследователь океана</p>
             </div>
-            <button class="profile__addButton"><img src="./images/plus.png" alt="plus"></button>
+            <button type="button" class="profile__add-button"><img src="./images/plus.svg" alt="добавить"></button>
         </section>
 
         <section class="elements">
             <div class="element">
-                <img class="element__image" src="./images/altai.jpg" alt="altai">
-                <div class="element__bottom">
-                    <p class="element__place-name">Алтай</p>
-                    <img class="element__like" src="./images/heart.svg" alt="heart">
+                <img class="element__image" src="./images/altai.jpg" alt="алтай">
+                <div class="element__body">
+                    <h3 class="element__place-name">Алтай</h3>
+                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
                 </div>
             </div>
 
             <div class="element">
-                <img class="element__image" src="./images/berlin.jpg" alt="berlin">
-                <div class="element__bottom">
-                    <p class="element__place-name">Берлин</p>
-                    <img class="element__like" src="./images/heart.svg" alt="heart">
+                <img class="element__image" src="./images/berlin.jpg" alt="берлин">
+                <div class="element__body">
+                    <h3 class="element__place-name">Берлин</h3>
+                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
                 </div>
             </div>
 
             <div class="element">
-                <img class="element__image" src="./images/budapest.jpg" alt="budapest">
-                <div class="element__bottom">
-                    <p class="element__place-name">Будапешт</p>
-                    <img class="element__like" src="./images/heart.svg" alt="heart">
+                <img class="element__image" src="./images/budapest.jpg" alt="Будапешт">
+                <div class="element__body">
+                    <h3 class="element__place-name">Будапешт</h3>
+                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
                 </div>
             </div>
 
             <div class="element">
-                <img class="element__image" src="./images/dresden.jpg" alt="dresden">
-                <div class="element__bottom">
-                    <p class="element__place-name">Дрезден</p>
-                    <img class="element__like" src="./images/heart.svg" alt="heart">
+                <img class="element__image" src="./images/dresden.jpg" alt="Дрезден">
+                <div class="element__body">
+                    <h3 class="element__place-name">Дрезден</h3>
+                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
                 </div>
             </div>
 
             <div class="element">
-                <img class="element__image" src="./images/praha.jpg" alt="praha">
-                <div class="element__bottom">
-                    <p class="element__place-name">Прага</p>
-                    <img class="element__like" src="./images/heart.svg" alt="heart">
+                <img class="element__image" src="./images/praha.jpg" alt="Прага">
+                <div class="element__body">
+                    <h3 class="element__place-name">Прага</h3>
+                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
                 </div>
             </div>
 
             <div class="element">
-                <img class="element__image" src="./images/vienna.jpg" alt="vienna">
-                <div class="element__bottom">
-                    <p class="element__place-name">Вена</p>
-                    <img class="element__like" src="./images/heart.svg" alt="heart">
+                <img class="element__image" src="./images/vienna.jpg" alt="Вена">
+                <div class="element__body">
+                    <h3 class="element__place-name">Вена</h3>
+                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
                 </div>
             </div>
 
@@ -94,6 +94,6 @@
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
-<script  type="text/javascript" src="./script.js"></script>    
+<script  type="text/javascript" src="./scripts/script.js"></script>    
 </body>
 </html>
