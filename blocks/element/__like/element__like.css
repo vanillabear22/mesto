@@ -6,7 +6,5 @@
 .element__like {
     background: none;
     border: none;
-}
-.element__like:active {
-    border: none;
+    outline: none;
 }
