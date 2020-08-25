@@ -1,14 +1,14 @@
 @import url(./__logo/header__logo.css);
 .header {
     border-bottom: 1px solid rgb(84,84,84,0.7);
-    min-height: 119px;
+    
     display: flex;
     
 }
 
 @media screen and (max-width: 650px) {
     .header {
-        min-height: 84px;
+        
         
     }
 }

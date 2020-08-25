@@ -4,7 +4,6 @@
 @import url(../element/__place-name/element__place-name.css);
 .element {
     max-width: 100%;
-    
     background: #FFFFFF;
     border-radius: 10px;
     box-sizing: border-box;
