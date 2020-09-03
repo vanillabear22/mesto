@@ -5,6 +5,9 @@
 @import url(./__title/popup__title.css);
 @import url(./_hidden/popup_hidden.css);
 @import url(./__form/popup__form.css);
+@import url(./__image/popup__image.css);
+@import url(./__image-container/popup__image-container.css);
+@import url(./__image-place-name/popup__image-place-name.css);
 .popup {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -13,4 +16,15 @@
     bottom: 0;
     left: 0;
     z-index: 2;
+    
 }
+
+
+.popup {
+    
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+  }
+  .popup:hover {
+    opacity: 1;
+  }

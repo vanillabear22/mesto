@@ -9,10 +9,19 @@
 </head>
 
 <body class="body">
+    <template id="image-popup-template">
+        <div class="popup popup_photo">
+            <div class="popup__image-container">
+                <img class="popup__image" src="./images/altai.jpg" alt="алтай">
+                <p class="popup__image-place-name">Алтай</p>
+                <button type="button" class="popup__close-icon"><img src="./images/Close-Icon.svg" alt="закрыть"></button>
+            </div>
+        </div>
+    </template>
     <div class="popup_hidden popup">
         <div class="popup__container">
             <h3 class="popup__title" >Редактировать профиль</h3>
-            <form name="form" method="POST" class="popup__form">
+            <form name="form" method="POST" class="popup__form popup__form_profile">
                 <input name="input-name" type="text" class="popup__field popup__field_name">
                 <input name="input-status" type="text" class="popup__field popup__field_status">
                 <button type="submit" class="popup__submit-button">Сохранить</button>
@@ -20,8 +29,20 @@
             <button type="button" class="popup__close-icon"><img src="./images/Close-Icon.svg" alt="закрыть"></button>
         </div>
     </div>
+
+    <div class="popup_hidden popup popup_place">
+        <div class="popup__container">
+            <h3 class="popup__title" >Новое место</h3>
+            <form name="form-place" method="POST" class="popup__form_place">
+                <input name="input-place-name" placeholder="Название" type="text" class="popup__field popup__field_place-name">
+                <input name="input-img-link" placeholder="Ссылка на картинку" type="text" class="popup__field popup__field_img-link">
+                <button type="submit" class="popup__submit-button">Создать</button>
+            </form>
+            <button type="button" class="popup__close-icon"><img src="./images/Close-Icon.svg" alt="закрыть"></button>
+        </div>
+    </div>
     <div class="page">
-        
+     
         <header class="header">
             <img class="header__logo" src="./images/logo.svg" alt="лого">
         </header>
@@ -39,55 +60,18 @@
         </section>
 
         <section class="elements">
-            <div class="element">
-                <img class="element__image" src="./images/altai.jpg" alt="алтай">
-                <div class="element__body">
-                    <h3 class="element__place-name">Алтай</h3>
-                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
+            
+            <template id='element-template'>
+                <div class="element">
+                    <button class="element__delete-icon" type="button"></button>
+                    <img class="element__image" src="./images/altai.jpg" alt="алтай">
+                    <div class="element__body">
+                        <h3 class="element__place-name">Алтай</h3>
+                        <button class="element__like" type="button"></button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="element">
-                <img class="element__image" src="./images/berlin.jpg" alt="берлин">
-                <div class="element__body">
-                    <h3 class="element__place-name">Берлин</h3>
-                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
-                </div>
-            </div>
-
-            <div class="element">
-                <img class="element__image" src="./images/budapest.jpg" alt="Будапешт">
-                <div class="element__body">
-                    <h3 class="element__place-name">Будапешт</h3>
-                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
-                </div>
-            </div>
-
-            <div class="element">
-                <img class="element__image" src="./images/dresden.jpg" alt="Дрезден">
-                <div class="element__body">
-                    <h3 class="element__place-name">Дрезден</h3>
-                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
-                </div>
-            </div>
-
-            <div class="element">
-                <img class="element__image" src="./images/praha.jpg" alt="Прага">
-                <div class="element__body">
-                    <h3 class="element__place-name">Прага</h3>
-                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
-                </div>
-            </div>
-
-            <div class="element">
-                <img class="element__image" src="./images/vienna.jpg" alt="Вена">
-                <div class="element__body">
-                    <h3 class="element__place-name">Вена</h3>
-                    <button class="element__like" type="button"> <img  src="./images/heart.svg" alt="сердечко"></button>
-                </div>
-            </div>
-
-        
+            </template>
+                    
         </section>
         </main>
         <footer class="footer">
