@@ -4,11 +4,11 @@ function toggleModalWindow(modalWindow) {
   };
 // Функции открытие/закрытие попапов
 function openPopup(popupType) {
-    popupType.classList.remove('popup_hidden');
+    
     toggleModalWindow(popupType);
 };
 function closePopup(popupType) {
-    popupType.classList.add('popup_hidden');
+    
     inputImgUrl.value = '';
     inputPlaceName.value = '';
     toggleModalWindow(popupType);

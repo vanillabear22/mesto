@@ -8,7 +8,7 @@
 @import url(./__image/popup__image.css);
 @import url(./__image-container/popup__image-container.css);
 @import url(./__image-place-name/popup__image-place-name.css);
-@import url(./_opened/popup_opened.css);
+
 .popup {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -18,15 +18,8 @@
     left: 0;
     z-index: 2;
 
-
-/*  С этим все перестает работать
-    display: flex;
     visibility: hidden;
     opacity: 0;
-
-    -o-transition: visibility 1s ease-out 0.5s, opacity 1s ease-out 0.5s;
-    transition: visibility 1s ease-out 0.5s, opacity 1s ease-out 0.5s;
-    -webkit-transition: visibility 1s ease-out 0.5s, opacity 1s ease-out 0.5s;
-    -moz-transition: visibility 1s ease-out 0.5s, opacity 1s ease-out 0.5s;
-    z-index: 10; */
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 10; 
 }
