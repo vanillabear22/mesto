@@ -54,7 +54,7 @@ function formSubmitHandler (evt) {
     closePopup (popupEditProfile);
     inputName.placeholder = inputName.value;
     inputStatus.placeholder = inputStatus.value;
-    inputName.value = '';
+    inputName.value = ''; // Дополнительный день было бы конечно очень здорово)
     inputStatus.value = '';
    
 }
