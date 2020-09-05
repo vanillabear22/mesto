@@ -42,10 +42,10 @@ closeButtonPopupPhoto.addEventListener('click', function() {
     });
 
 // Функция сабмит Профиль
-let inputName = document.querySelector('.popup__field_name');
-let inputStatus = document.querySelector('.popup__field_status');
-let profileName = document.querySelector('.profile__name');
-let profileStatus = document.querySelector('.profile__status');
+const inputName = document.querySelector('.popup__field_name');
+const inputStatus = document.querySelector('.popup__field_status');
+const profileName = document.querySelector('.profile__name');
+const profileStatus = document.querySelector('.profile__status');
 
 
 function formSubmitHandler (evt) {
@@ -72,14 +72,14 @@ evt.target.parentElement.remove();
 };
 
 // Сборка карточки 
-let elementTeplate = document.querySelector('#element-template').content;
+const elementTeplate = document.querySelector('#element-template').content;
 const elements = document.querySelector('.elements');
 function getCardElement (name, link) {
 const element = elementTeplate.cloneNode(true);
 const likeButton = element.querySelector('.element__like');
 const deleteButton = element.querySelector('.element__delete-icon');
-let elementImage = element.querySelector('.element__image');
-let elementPlaceName = element.querySelector('.element__place-name');
+const elementImage = element.querySelector('.element__image');
+const elementPlaceName = element.querySelector('.element__place-name');
 elementImage.src = link;
 elementImage.alt = name;
 elementPlaceName.textContent = name;
@@ -98,7 +98,10 @@ elementImage.addEventListener('click', function(evt) {
 // Возвращаем элемент карточки
 return element;
 };
-
+// renderCard
+const renderCard = (data1, data2, container) => {
+    container.prepend(getCardElement(data1, data2));
+  };
 
 // Submit Добавление карточки
 const formPopupPlace = document.querySelector('.popup__form_place');
@@ -108,7 +111,7 @@ const popupPlace = document.querySelector('.popup_place');
 
 function addCardFromPopup (evt) {
     evt.preventDefault(); 
-    elements.prepend(getCardElement(inputPlaceName.value, inputImgUrl.value)); 
+    renderCard(inputPlaceName.value, inputImgUrl.value, elements);
     inputImgUrl.value = '';
     inputPlaceName.value = '';
     closePopup(popupAddCard);
@@ -117,7 +120,7 @@ formPopupPlace.addEventListener('submit', addCardFromPopup);
 
 // Автоматическое создание карточек из массива
 initialCards.forEach(function(item) {
-    elements.prepend(getCardElement(item.name, item.link));
+    renderCard(item.name, item.link, elements);
 });
 
 
