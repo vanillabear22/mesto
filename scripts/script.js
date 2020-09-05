@@ -47,14 +47,16 @@ const inputStatus = document.querySelector('.popup__field_status');
 const profileName = document.querySelector('.profile__name');
 const profileStatus = document.querySelector('.profile__status');
 
-
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
     profileName.textContent = inputName.value;
     profileStatus.textContent = inputStatus.value;
     closePopup (popupEditProfile);
+    inputName.placeholder = inputName.value;
+    inputStatus.placeholder = inputStatus.value;
     inputName.value = '';
     inputStatus.value = '';
+   
 }
     // вешаем слушатель на сабмит
 const formPopup = document.querySelector('.popup__form_profile');
