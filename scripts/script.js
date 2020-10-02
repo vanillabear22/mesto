@@ -1,18 +1,25 @@
-// Функция для плавности
-function toggleModalWindow(modalWindow) {
-    modalWindow.classList.toggle('popup_opened');
-  };
+// Функция Закрытие попапов по Esc
+const closeEsc = (evt, popupType) => {
+    if (evt.key === "Escape") {
+        closePopup(popupType);
+    }
+}
+
 // Функции открытие/закрытие попапов
 function openPopup(popupType) {
+    popupType.classList.add('popup_opened');
     
-    toggleModalWindow(popupType);
 };
 function closePopup(popupType) {
     
     inputImgUrl.value = '';
     inputPlaceName.value = '';
-    toggleModalWindow(popupType);
+    popupType.classList.remove('popup_opened');
+    
+    
 };
+
+
 
 // Вешаем слашателя на кнопкe ADD 
 popupAddCard = document.querySelector('.popup_add-card');
@@ -20,6 +27,7 @@ const addButton = document.querySelector('.profile__add-button');
 const closeButtonPopupAddCard = popupAddCard.querySelector('.popup__close-icon');
 addButton.addEventListener('click', function() {
     openPopup(popupAddCard);
+    
     });
 closeButtonPopupAddCard.addEventListener('click', function() {
     closePopup(popupAddCard);
@@ -42,8 +50,8 @@ closeButtonPopupPhoto.addEventListener('click', function() {
     });
 
 // Функция сабмит Профиль
-const inputName = document.querySelector('.popup__field_name');
-const inputStatus = document.querySelector('.popup__field_status');
+const inputName = document.querySelector('.popup__input_name');
+const inputStatus = document.querySelector('.popup__input_status');
 const profileName = document.querySelector('.profile__name');
 const profileStatus = document.querySelector('.profile__status');
 
@@ -107,8 +115,8 @@ const renderCard = (data1, data2, container) => {
 
 // Submit Добавление карточки
 const formPopupPlace = document.querySelector('.popup__form_place');
-const inputImgUrl = document.querySelector('.popup__field_img-link');
-const inputPlaceName = document.querySelector('.popup__field_place-name');
+const inputImgUrl = document.querySelector('.popup__input_img-link');
+const inputPlaceName = document.querySelector('.popup__input_place-name');
 const popupPlace = document.querySelector('.popup_place');
 
 function addCardFromPopup (evt) {
@@ -126,3 +134,30 @@ initialCards.forEach(function(item) {
 });
 
 
+ document.addEventListener('keyup', function(evt){
+     if (evt.key === "Escape") {
+         closePopup(popupPhoto);
+     }
+ });
+
+ document.addEventListener('keyup', function(evt){
+    if (evt.key === "Escape") {
+        closePopup(popupEditProfile);
+    }
+});
+
+document.addEventListener('keyup', function(evt){
+    if (evt.key === "Escape") {
+        closePopup(popupAddCard);
+    }
+});
+
+popupPhoto.addEventListener('click', function(){
+    closePopup(popupPhoto);
+});
+popupEditProfile.addEventListener('click', function(){
+    closePopup(popupEditProfile);
+});
+popupAddCard.addEventListener('click', function(){
+    closePopup(popupAddCard);
+});

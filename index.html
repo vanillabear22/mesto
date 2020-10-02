@@ -21,10 +21,16 @@
     <div class="popup  popup_profile ">
         <div class="popup__container">
             <h3 class="popup__title" >Редактировать профиль</h3>
-            <form name="form" method="POST" class="popup__form popup__form_profile">
-                <input name="input-name" placeholder="Жак-Ив Кусто" type="text" class="popup__field popup__field_name">
-                <input name="input-status" placeholder="Исследователь океана" type="text" class="popup__field popup__field_status">
-                <button type="submit" class="popup__submit-button">Сохранить</button>
+            <form name="form-profile" method="POST" class="popup__form popup__form_profile" novalidate>
+                <label>
+                    <input name="input-name" placeholder="Жак-Ив Кусто" type="text" class="popup__input popup__input_name" minlength="2" maxlength="40" required>
+                    <span class="popup__error" id="input-name-error">1</span>
+                </label>
+                <label>
+                    <input name="input-status" placeholder="Исследователь океана" type="text" class="popup__input popup__input_status" minlength="2" maxlength="200" required>
+                    <span class="popup__error" id="input-status-error">1</span>
+                </label>
+                <button type="submit" class="popup__submit-button popup__submit-button_disabled" disabled>Сохранить</button>
             </form>
             <button type="button" class="popup__close-icon"><img src="./images/Close-Icon.svg" alt="закрыть"></button>
         </div>
@@ -33,10 +39,16 @@
     <div class="popup  popup_add-card">
         <div class="popup__container">
             <h3 class="popup__title" >Новое место</h3>
-            <form name="form-place" method="POST" class="popup__form_place">
-                <input name="input-place-name" placeholder="Название" type="text" class="popup__field popup__field_place-name">
-                <input name="input-img-link" placeholder="Ссылка на картинку" type="text" class="popup__field popup__field_img-link">
-                <button type="submit" class="popup__submit-button">Создать</button>
+            <form name="form-place" method="POST" class="popup__form popup__form_place" novalidate>
+                <label>
+                    <input name="input-place-name" placeholder="Название" type="text" class="popup__input popup__input_place-name" minlength="1" maxlength="30" required>
+                    <span class="popup__error" id="input-place-name-error"></span>
+                </label>
+                <label>
+                    <input name="input-img-link" placeholder="Ссылка на картинку" type="url" class="popup__input popup__input_img-link" required>
+                    <span class="popup__error" id="input-img-link-error"></span>
+                </label>
+                <button type="submit" class="popup__submit-button popup__submit-button_disabled" disabled>Создать</button>
             </form>
             <button type="button" class="popup__close-icon"><img src="./images/Close-Icon.svg" alt="закрыть"></button>
         </div>
@@ -78,7 +90,8 @@
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
-<script src="./scripts/cards.js"></script>
-<script  type="text/javascript" src="./scripts/script.js"></script>    
+<script type="text/javascript" src="./scripts/cards.js" defer></script>
+<script type="text/javascript" src="./scripts/script.js" defer></script>
+<script type="text/javascript" src="./scripts/validation.js" defer></script>    
 </body>
 </html>
