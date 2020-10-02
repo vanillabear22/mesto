@@ -152,12 +152,18 @@ document.addEventListener('keyup', function(evt){
     }
 });
 
-popupPhoto.addEventListener('click', function(){
-    closePopup(popupPhoto);
+popupPhoto.addEventListener('click', function(evt){
+    if (evt.target === popupPhoto) {
+        closePopup(popupPhoto);
+    }
 });
-popupEditProfile.addEventListener('click', function(){
-    closePopup(popupEditProfile);
+popupEditProfile.addEventListener('click', function(evt){
+    if (evt.target === popupEditProfile) {
+        closePopup(popupEditProfile);
+    }
 });
-popupAddCard.addEventListener('click', function(){
-    closePopup(popupAddCard);
+popupAddCard.addEventListener('click', function(evt){
+    if (evt.target === popupAddCard) {
+        closePopup(popupAddCard);
+    }
 });
