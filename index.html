@@ -23,11 +23,11 @@
             <h3 class="popup__title" >Редактировать профиль</h3>
             <form name="form-profile" method="POST" class="popup__form popup__form_profile" novalidate>
                 <label>
-                    <input name="input-name" placeholder="Жак-Ив Кусто" type="text" class="popup__input popup__input_name" minlength="2" maxlength="40" required>
+                    <input name="input-name" placeholder="Жак-Ив Кусто" type="text" class="popup__input popup__input_name" minlength="2" maxlength="40" required> <!--Не понимаю почему хранение в пласехолдер мешает редактироованию) все же работает-->
                     <span class="popup__error" id="input-name-error">1</span>
                 </label>
                 <label>
-                    <input name="input-status" placeholder="Исследователь океана" type="text" class="popup__input popup__input_status" minlength="2" maxlength="200" required>
+                    <input name="input-status" placeholder="Исследователь океана" type="text" class="popup__input popup__input_status" minlength="2" maxlength="200" required> <!--Значения же сохраняются-->
                     <span class="popup__error" id="input-status-error">1</span>
                 </label>
                 <button type="submit" class="popup__submit-button popup__submit-button_disabled" disabled>Сохранить</button>
@@ -41,7 +41,7 @@
             <h3 class="popup__title" >Новое место</h3>
             <form name="form-place" method="POST" class="popup__form popup__form_place" novalidate>
                 <label>
-                    <input name="input-place-name" placeholder="Название" type="text" class="popup__input popup__input_place-name" minlength="1" maxlength="30" required>
+                    <input name="input-place-name" placeholder="Название" type="text" class="popup__input popup__input_place-name" minlength="2" maxlength="30" required>
                     <span class="popup__error" id="input-place-name-error"></span>
                 </label>
                 <label>
