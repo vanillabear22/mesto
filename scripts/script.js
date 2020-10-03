@@ -57,16 +57,14 @@ const inputName = document.querySelector('.popup__input_name');
 const inputStatus = document.querySelector('.popup__input_status');
 const profileName = document.querySelector('.profile__name');
 const profileStatus = document.querySelector('.profile__status');
-
+inputName.value=profileName.textContent;
+inputStatus.value=profileStatus.textContent;
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
     profileName.textContent = inputName.value;
     profileStatus.textContent = inputStatus.value;
     closePopup (popupEditProfile);
-    inputName.placeholder = inputName.value;
-    inputStatus.placeholder = inputStatus.value;
-    inputName.value = ''; // Дополнительный день было бы конечно очень здорово)
-    inputStatus.value = '';
+    
    
 }
     // вешаем слушатель на сабмит
