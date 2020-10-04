@@ -39,11 +39,12 @@ const editProfileButton = document.querySelector('.profile__edit-button');
 const closeButtonPopupEditProfile = popupEditProfile.querySelector('.popup__close-icon');
 editProfileButton.addEventListener('click', function() {
     openPopup(popupEditProfile);
+    ///////////////////////////////////////////////////////////////////
     });
     closeButtonPopupEditProfile.addEventListener('click', function() {
     closePopup(popupEditProfile);
-    inputName.value= '';
-    inputStatus.value= '';
+    inputName.value= profileName.textContent;
+    inputStatus.value= profileStatus.textContent;
     });
 // Вешаем слушаетля на зыкрытие попапа с большой фоткой
 const popupPhoto = document.querySelector('.popup_photo');
