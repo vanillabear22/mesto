@@ -1,8 +1,8 @@
+// Функция закрытия открытого попапа
 const closeEsc = (evt) => {
     if (evt.key === "Escape") {
-        closePopup(popupPhoto);
-        closePopup(popupAddCard);
-        closePopup(popupEditProfile);
+        const openedPopup = document.querySelector('.popup_opened');
+        closePopup(openedPopup);
     }
 };
 
@@ -39,15 +39,16 @@ const editProfileButton = document.querySelector('.profile__edit-button');
 const closeButtonPopupEditProfile = popupEditProfile.querySelector('.popup__close-icon');
 editProfileButton.addEventListener('click', function() {
     openPopup(popupEditProfile);
-    ///////////////////////////////////////////////////////////////////
-    });
-    closeButtonPopupEditProfile.addEventListener('click', function() {
-    closePopup(popupEditProfile);
     inputName.value= profileName.textContent;
     inputStatus.value= profileStatus.textContent;
     });
+    closeButtonPopupEditProfile.addEventListener('click', function() {
+    closePopup(popupEditProfile);
+    });
 // Вешаем слушаетля на зыкрытие попапа с большой фоткой
 const popupPhoto = document.querySelector('.popup_photo');
+const imagePopupLink = popupPhoto.querySelector('.popup__image');
+const imagePopupTitle = popupPhoto.querySelector('.popup__image-place-name');
 const closeButtonPopupPhoto = popupPhoto.querySelector('.popup__close-icon');
 closeButtonPopupPhoto.addEventListener('click', function() {
     closePopup(popupPhoto);
@@ -58,8 +59,6 @@ const inputName = document.querySelector('.popup__input_name');
 const inputStatus = document.querySelector('.popup__input_status');
 const profileName = document.querySelector('.profile__name');
 const profileStatus = document.querySelector('.profile__status');
-inputName.value=profileName.textContent;
-inputStatus.value=profileStatus.textContent;
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
     profileName.textContent = inputName.value;
@@ -101,8 +100,6 @@ likeButton.addEventListener('click', likeCard);
 deleteButton.addEventListener('click', deleteCard);
     // Функция и Слушатель для открытия попапа с фоткой
 elementImage.addEventListener('click', function(evt) {
-    imagePopupLink = popupPhoto.querySelector('.popup__image');
-    imagePopupTitle = popupPhoto.querySelector('.popup__image-place-name');
     imagePopupLink.src = evt.target.src;
     imagePopupTitle.textContent = evt.target.alt;
     openPopup(popupPhoto);
@@ -111,12 +108,12 @@ elementImage.addEventListener('click', function(evt) {
 return element;
 };
 // renderCard
-const renderCard = (data1, data2, container) => {
-    container.append(getCardElement(data1, data2));
+const renderCard = (name, link, container) => {
+    container.append(getCardElement(name, link));
   };
 // Тогда я пишу новую функцию для добавления новых карточек, потомучто новые должны быть в начале
-const renderNewCard = (data1, data2, container) => {
-    container.prepend(getCardElement(data1, data2));
+const renderNewCard = (name, link, container) => {
+    container.prepend(getCardElement(name, link));
   };
 // Submit Добавление карточки
 const formPopupPlace = document.querySelector('.popup__form_place');
