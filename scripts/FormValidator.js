@@ -74,10 +74,7 @@
     enableValidation = () => {
       this._setEventListeners();
     };
-   
-    
-    
-
-
 
  }
+
+ export {config, FormValidator};

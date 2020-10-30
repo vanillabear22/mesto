@@ -65,12 +65,25 @@ class Card {
     _openPopupCard() {
         this._element.querySelector('.element__image').addEventListener('click', function(evt) {
             
-            imagePopupLink.src = evt.target.src;
-            imagePopupTitle.textContent = evt.target.alt;
-            openPopup(popupPhoto);
+            document.querySelector('.popup__image').src = evt.target.src;
+            document.querySelector('.popup__image-place-name').textContent = evt.target.alt;
+            const openPopup = () => {
+            document.querySelector('.popup_photo').classList.add('popup_opened');
+            document.addEventListener('keyup', (evt) => {
+                if (evt.key === "Escape") {
+                    const openedPopup = document.querySelector('.popup_opened');
+                    const closePopup = () => {
+                        openedPopup.classList.remove('popup_opened');
+                    };
+                    closePopup();
+                }
+            });
+            };
+            openPopup();
         });
     }
 }
 
 
+export {initialCards, Card};
 

@@ -73,7 +73,7 @@ formPopup.addEventListener('submit', formSubmitHandler);
 
 
 // СОЗДАНИЕ КАРТОЧЕК
-
+import {initialCards, Card} from './cards.js' ;
 // функция для добавления новых карточек
 const renderNewCard = (name, link) => {
     const card = new Card(name, link, '#element-template');
@@ -116,7 +116,7 @@ popupAll.forEach(function(popupType) {
 
 
 //// VALIDATION
-
+import {config, FormValidator} from './FormValidator.js';
 const formProfileValidator = new FormValidator(config, config.formProfile);
 formProfileValidator.enableValidation()
 const formPlaceValidator = new FormValidator(config, config.formPlace);
