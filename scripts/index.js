@@ -67,53 +67,18 @@ function formSubmitHandler (evt) {
     
    
 }
-    // вешаем слушатель на сабмит
+    // вешаем слушатель на сабмит профиля
 const formPopup = document.querySelector('.popup__form_profile');
 formPopup.addEventListener('submit', formSubmitHandler);
 
 
-// LIKE 
-function likeCard(evt) {
-evt.target.classList.toggle('element__like_active');
-};
+// СОЗДАНИЕ КАРТОЧЕК
 
-// DELETE
-function deleteCard(evt) {
-evt.target.parentElement.remove();
-};
-
-// Сборка карточки 
-const elementTemplate = document.querySelector('#element-template').content;
-const elements = document.querySelector('.elements');
-function getCardElement (name, link) {
-const element = elementTemplate.cloneNode(true);
-const likeButton = element.querySelector('.element__like');
-const deleteButton = element.querySelector('.element__delete-icon');
-const elementImage = element.querySelector('.element__image');
-const elementPlaceName = element.querySelector('.element__place-name');
-elementImage.src = link;
-elementImage.alt = name;
-elementPlaceName.textContent = name;
-
-// Устанавливаем слушателеи
-likeButton.addEventListener('click', likeCard);
-deleteButton.addEventListener('click', deleteCard);
-    // Функция и Слушатель для открытия попапа с фоткой
-elementImage.addEventListener('click', function(evt) {
-    imagePopupLink.src = evt.target.src;
-    imagePopupTitle.textContent = evt.target.alt;
-    openPopup(popupPhoto);
-    });
-// Возвращаем элемент карточки
-return element;
-};
-// renderCard
-const renderCard = (name, link, container) => {
-    container.append(getCardElement(name, link));
-  };
-// Тогда я пишу новую функцию для добавления новых карточек, потомучто новые должны быть в начале
-const renderNewCard = (name, link, container) => {
-    container.prepend(getCardElement(name, link));
+// функция для добавления новых карточек
+const renderNewCard = (name, link) => {
+    const card = new Card(name, link, '#element-template');
+    const cardElement = card.generateCard();
+    document.querySelector('.elements').prepend(cardElement);
   };
 // Submit Добавление карточки
 const formPopupPlace = document.querySelector('.popup__form_place');
@@ -123,7 +88,7 @@ const inputPlaceName = document.querySelector('.popup__input_place-name');
 
 function addCardFromPopup (evt) {
     evt.preventDefault(); 
-    renderNewCard(inputPlaceName.value, inputImgUrl.value, elements);
+    renderNewCard(inputPlaceName.value, inputImgUrl.value);
     inputImgUrl.value = '';
     inputPlaceName.value = '';
     closePopup(popupAddCard);
@@ -132,9 +97,10 @@ formPopupPlace.addEventListener('submit', addCardFromPopup);
 
 // Автоматическое создание карточек из массива
 initialCards.forEach(function(item) {
-    renderCard(item.name, item.link, elements);
+    const card = new Card(item.name, item.link, '#element-template');
+	const cardElement = card.generateCard();
+	document.querySelector('.elements').append(cardElement);
 });
-
 
 
 
@@ -147,3 +113,12 @@ popupAll.forEach(function(popupType) {
         }
     });
 });
+
+
+//// VALIDATION
+
+const formProfileValidator = new FormValidator(config, config.formProfile);
+formProfileValidator.enableValidation()
+const formPlaceValidator = new FormValidator(config, config.formPlace);
+formPlaceValidator.enableValidation()
+

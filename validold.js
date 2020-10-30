@@ -7,9 +7,8 @@ const showInputError = (formElement, inputElement, errorMessage, object) => {
   // 3. Добавьте formError класс form__input-error_active. Пока не знаю зачем, а гланое ...
   errorElement.classList.add(object.errorClass);
 };
+
 // Функция, которая удаляет класс с ошибкой
-
-
 const hideInputError = (formElement, inputElement, object) => {
   const errorElement = formElement.querySelector(`#${inputElement.name}-error`);
   inputElement.classList.remove(object.inputErrorClass);
@@ -53,24 +52,12 @@ const toggleButtonState = (inputList, buttonElement, object) => {
 } 
 }
 
-
-  
+ 
   // Функция включения валидации
   const enableValidation = (object) => {
     const formList = Array.from(document.querySelectorAll(object.formSelector));
+    console.log(formList);
     formList.forEach((formElement) => {
       setEventListeners(formElement, object);
   }); 
-
-  }
-  
-  enableValidation({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__submit-button',
-    inactiveButtonClass: 'popup__submit-button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
-  }); 
-  
-   
+}
