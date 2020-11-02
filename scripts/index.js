@@ -1,24 +1,6 @@
-// Функция закрытия открытого попапа
-const closeEsc = (evt) => {
-    if (evt.key === "Escape") {
-        const openedPopup = document.querySelector('.popup_opened');
-        closePopup(openedPopup);
-    }
-};
-
-// Функции открытие/закрытие попапов
-function openPopup(popupType) {
-    popupType.classList.add('popup_opened');
-    document.addEventListener('keyup', closeEsc);
-};
-function closePopup(popupType) {
-    
-    popupType.classList.remove('popup_opened');
-    document.removeEventListener('keyup', closeEsc);
-    
-};
-
-
+import {initialCards, Card} from './cards.js' ;
+import { openPopup, closePopup } from './utils.js';
+import {config, FormValidator} from './FormValidator.js';
 
 // Вешаем слашателя на кнопкe ADD 
 const popupAddCard = document.querySelector('.popup_add-card');
@@ -47,8 +29,6 @@ editProfileButton.addEventListener('click', function() {
     });
 // Вешаем слушаетля на зыкрытие попапа с большой фоткой
 const popupPhoto = document.querySelector('.popup_photo');
-const imagePopupLink = popupPhoto.querySelector('.popup__image');
-const imagePopupTitle = popupPhoto.querySelector('.popup__image-place-name');
 const closeButtonPopupPhoto = popupPhoto.querySelector('.popup__close-icon');
 closeButtonPopupPhoto.addEventListener('click', function() {
     closePopup(popupPhoto);
@@ -73,7 +53,7 @@ formPopup.addEventListener('submit', formSubmitHandler);
 
 
 // СОЗДАНИЕ КАРТОЧЕК
-import {initialCards, Card} from './cards.js' ;
+
 // функция для добавления новых карточек
 const renderNewCard = (name, link) => {
     const card = new Card(name, link, '#element-template');
@@ -96,10 +76,11 @@ function addCardFromPopup (evt) {
 formPopupPlace.addEventListener('submit', addCardFromPopup);  
 
 // Автоматическое создание карточек из массива
+const elements = document.querySelector('.elements');
 initialCards.forEach(function(item) {
     const card = new Card(item.name, item.link, '#element-template');
 	const cardElement = card.generateCard();
-	document.querySelector('.elements').append(cardElement);
+	elements.append(cardElement);
 });
 
 
@@ -116,9 +97,10 @@ popupAll.forEach(function(popupType) {
 
 
 //// VALIDATION
-import {config, FormValidator} from './FormValidator.js';
+
 const formProfileValidator = new FormValidator(config, config.formProfile);
 formProfileValidator.enableValidation()
 const formPlaceValidator = new FormValidator(config, config.formPlace);
 formPlaceValidator.enableValidation()
+
 
